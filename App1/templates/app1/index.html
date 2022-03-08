@@ -1,0 +1,18 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<div class="container mt-5 mb-5">
+  <div class="col-lg-7">
+    <h2>Book Your Appointment Here ...</h2>
+  <form method="POST" class="mt-4">
+    {% csrf_token %}
+    <div class="form-group">
+     {{ form.as_p }}
+    </div>
+  <button type="submit" class="btn btn-primary mt-3 mb-5">Schedule An Appointment</button>
+</form>
+</div>
+{% for message in messages %}
+  {{message}}
+{% endfor %}
+</div >
+{% endblock %}
